@@ -142,9 +142,9 @@ passport.use(
 );
 
 passport.serializeUser(function (user, cb) {
-  cb(null, { id: user.id, username: user.email });
-  // process.nextTick(function () {
-  // });
+  process.nextTick(function () {
+    cb(null, { id: user.id, username: user.email });
+  });
 });
 
 passport.deserializeUser(function (user, cb) {
