@@ -148,9 +148,9 @@ passport.serializeUser(function (user, cb) {
 });
 
 passport.deserializeUser(function (user, cb) {
-  return cb(null, user);
-  // process.nextTick(function () {
-  // });
+  process.nextTick(function () {
+    return cb(null, user);
+  });
 });
 
 app.listen(port, () => {
