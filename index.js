@@ -142,15 +142,15 @@ passport.use(
 );
 
 passport.serializeUser(function (user, cb) {
-  process.nextTick(function () {
-    cb(null, { id: user.id, username: user.email });
-  });
+  cb(null, { id: user.id, username: user.email });
+  // process.nextTick(function () {
+  // });
 });
 
 passport.deserializeUser(function (user, cb) {
-  process.nextTick(function () {
-    return cb(null, user);
-  });
+  return cb(null, user);
+  // process.nextTick(function () {
+  // });
 });
 
 app.listen(port, () => {
