@@ -108,6 +108,7 @@ app.get("/logout", (req, res) => {
 });
 
 passport.use(
+  "local",
   new Strategy(async function (username, password, cb) {
     try {
       const result = await db.query("SELECT * FROM users WHERE email = $1", [
